@@ -1,2 +1,1 @@
-# hackerrank
-My solutions to some HackerRank problems in Python 3.
+# HackerRank
