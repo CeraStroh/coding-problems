@@ -18,21 +18,31 @@ import sys
 #
 
 def repeatedString(s, n):
-    aNum = 0
     sLength = len(s)
-    for i in range(sLength):
-        if s[i] == "a":
-            aNum += 1
-    divide = n/sLength
-    print(str(divide) + "," + str(aNum))
-    if isinstance(divide, float):
-        occurences = divide * aNum
-        print(str(occurences))
-        occurences = round(occurences)
+    sIndex = 0
+    count = 0
+    remainderCount = 0
+    if s == ("a" * sLength):
+        result = n
     else:
-        occurences = int(divide * aNum)
-    print(str(occurences))
-    return occurences
+        for index in range(sLength):
+            if s[index] == "a":
+                count += 1
+        # print("there are " + str(count) + " a's in s")
+        sCount = int(n / sLength)
+        # print(str(sCount) + "=" + str(n) + "/" + str(sLength))
+        result = sCount * count
+        # print("result " + str(result))
+        sRemainder = n % sLength
+        if sRemainder !=0:
+            # print("remainder")
+            for j in range(sRemainder):
+                if s[j] == "a":
+                    remainderCount += 1
+                    # print("remainderCount " + str(remainderCount))
+        result += remainderCount
+        # print(str(result))
+    return result
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
