@@ -1,3 +1,4 @@
+# Pop n numer of 0's at end of nums1, merge 2 non-decreasing arrays, sort
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         """
@@ -8,11 +9,9 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
         if len(nums2) != 0:
-            for x in range(m):
-                if nums1[x] == 0:
-                    nums1.pop(x)
+            for x in range(n):
+                nums1.pop(len(nums1)-1)
             for x in range(n):
                 nums1.append(nums2[x])
-            nums1.sort() #can't just sort, need to be in non-decreasing order & only pop from end
-            for x in range(n):
-                nums1.pop(0)
+            nums1.sort()
+            
