@@ -9,15 +9,10 @@ class Solution(object):
         k = 0
         y = 0
         for x in range(len(nums)):
-            # print(str(nums))
             if nums[y] == val:
-                # print(str(nums[y]) + " = " + str(val))
                 nums.append(nums[y])
-                # print("after append: " + str(nums))
                 nums.pop(y)
-                # print("after pop: " + str(nums))
             else:
                 k += 1
                 y += 1
-                # print("new k: " + str(k))
         return k
